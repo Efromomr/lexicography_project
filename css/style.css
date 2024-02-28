@@ -52,7 +52,7 @@ body {
   grid-area: spinner;
 }
 
-.prize {
+.dict {
   display: flex;
   align-items: center;
   padding: 0 calc(var(--size) / 6) 0 calc(var(--size) / 20);
@@ -63,7 +63,7 @@ body {
   user-select: none;
 }
 
-.prize span
+.dict span
 {
 	position: relative;
 	font-size: 15.0pt;
@@ -114,7 +114,7 @@ body {
   }
 }
 
-.prize.selected .text {
+.dict.selected .text {
   color: white;
   animation: selected 800ms ease;
 }

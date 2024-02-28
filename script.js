@@ -4,7 +4,7 @@ let all_dicts = ["Словарь русских народных говоров"
 "Словарь областного архангельского наречия", "Словарь языка интернета. ru", "Словарь Макса Фасмера"];
 const shuffled = [...all_dicts].sort(() => 0.5 - Math.random());
 let dict_arr = shuffled.slice(0, 9);
-const prizes = [
+const dicts = [
   {
     text: dict_arr[1],
     color: "hsl(197 30% 43%)",
@@ -45,8 +45,8 @@ const trigger = wheel.querySelector(".btn-spin");
 const ticker = wheel.querySelector(".ticker");
 
 
-const prizeSlice = 360 / prizes.length;
-const prizeOffset = Math.floor(180 / prizes.length);
+const dictSlice = 360 / dicts.length;
+const dictOffset = Math.floor(180 / dicts.length);
 const spinClass = "is-spinning";
 const selectedClass = "selected";
 const spinnerStyles = window.getComputedStyle(spinner);
@@ -55,14 +55,14 @@ const spinnerStyles = window.getComputedStyle(spinner);
 let tickerAnim;
 let rotation = 0;
 let currentSlice = 0;
-let prizeNodes;
+let dictNodes;
 
-const createPrizeNodes = () => {
-  prizes.forEach(({ text, color, reaction }, i) => {
-    const rotation = ((prizeSlice * i) * -1) - prizeOffset;
+const createdictNodes = () => {
+  dicts.forEach(({ text, color, reaction }, i) => {
+    const rotation = ((dictSlice * i) * -1) - dictOffset;
     spinner.insertAdjacentHTML(
       "beforeend",
-      `<li class="prize" data-reaction=${reaction} style="--rotate: ${rotation}deg">
+      `<li class="dict" data-reaction=${reaction} style="--rotate: ${rotation}deg">
         <span class="text">${text}</span>
       </li>`
     );
@@ -75,9 +75,9 @@ const createConicGradient = () => {
     "style",
     `background: conic-gradient(
       from -90deg,
-      ${prizes
+      ${dicts
         // получаем цвет текущего сектора
-        .map(({ color }, i) => `${color} 0 ${(100 / prizes.length) * (prizes.length - i)}%`)
+        .map(({ color }, i) => `${color} 0 ${(100 / dicts.length) * (dicts.length - i)}%`)
         .reverse()
       }
     );`
@@ -86,8 +86,8 @@ const createConicGradient = () => {
 
 const setupWheel = () => {
   createConicGradient();
-  createPrizeNodes();
-  prizeNodes = wheel.querySelectorAll(".prize");
+  createdictNodes();
+  dictNodes = wheel.querySelectorAll(".dict");
 };
 
 const spinertia = (min, max) => {
@@ -106,7 +106,7 @@ const runTickerAnimation = () => {
   if (rad < 0) rad += (2 * Math.PI);
   
   const angle = Math.round(rad * (180 / Math.PI));
-  const slice = Math.floor(angle / prizeSlice);
+  const slice = Math.floor(angle / dictSlice);
 
   if (currentSlice !== slice) {
     ticker.style.animation = "none";
@@ -116,15 +116,15 @@ const runTickerAnimation = () => {
   tickerAnim = requestAnimationFrame(runTickerAnimation);
 };
 
-const selectPrize = () => {
-  const selected = Math.floor(rotation / prizeSlice);
-  prizeNodes[selected].classList.add(selectedClass);
+const selectDict = () => {
+  const selected = Math.floor(rotation / dictSlice);
+  dictNodes[selected].classList.add(selectedClass);
 };
 
 trigger.addEventListener("click", () => {
   trigger.disabled = true;
   rotation = Math.floor(Math.random() * 360 + spinertia(2000, 5000));
-  prizeNodes.forEach((prize) => prize.classList.remove(selectedClass));
+  dictNodes.forEach((dict) => dict.classList.remove(selectedClass));
   wheel.classList.add(spinClass);
   spinner.style.setProperty("--rotate", rotation);
   ticker.style.animation = "none";
@@ -137,7 +137,7 @@ window.location.href = './dict_page.html';
 spinner.addEventListener("transitionend", () => {
   cancelAnimationFrame(tickerAnim);
   rotation %= 360;
-  selectPrize();
+  selectDict();
   wheel.classList.remove(spinClass);
   spinner.style.setProperty("--rotate", rotation);
   //trigger.disabled = false;
