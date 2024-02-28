@@ -1,0 +1,33 @@
+body {
+  font-family: "Arsenal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-color: #fff; }
+
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease; }
+  a, a:hover {
+    text-decoration: none !important; }
+
+h1 {
+  font-size: 60px;
+font-family: "Arsenal";}
+h2 {
+  font-size: 20px; 
+font-family: "Arsenal";}
+p {
+  font-family: "Arsenal";}
+
+number-label {
+  font-family: "Arsenal";
+  font-size: 75px;
+  margin: 0px;}
+label {
+  font-family: "Arsenal";
+  font-size: 50px;}
+br {
+   display: block;
+   margin: 5px 0;
+}
+
+
