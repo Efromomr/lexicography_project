@@ -130,9 +130,11 @@ trigger.addEventListener("click", () => {
   ticker.style.animation = "none";
   runTickerAnimation();
 });
-// функция для переадресации после кручения колеса (пока что ведёт на заглушку)
+
 function loadPage() {
-window.location.href = './dict_page.html';
+$.post( "/postmethod", {
+    javascript_data: 'sample_text'
+});
 }
 spinner.addEventListener("transitionend", () => {
   cancelAnimationFrame(tickerAnim);

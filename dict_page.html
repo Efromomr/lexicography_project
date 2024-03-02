@@ -23,25 +23,29 @@
     <link rel="stylesheet" href="css/dict_style.css">
 	<link href='https://fonts.googleapis.com/css?family=Rubik Mono One' rel='stylesheet'>
 
-    <title>Calendar</title>
+    <title>База словарей</title>
   </head>
   
 <div class = "container col-12">
-<h1 align="center" class=" fw-bold px-3 py-3">Лексикографическая штука</h1>
+<h1 align="center" class=" fw-bold px-3 py-3">База словарей</h1>
 </div>
 <div class="container col-12">
     <div class="row flex-lg-row px--4">
 	  
 	  <div class="col-4">
-        <h2 class="display-5 fw-bold">Словарь Даля</h2>
-        <p class="lead"> Словарь Даль писал <b> один. </b> <br> Словарь является одним из крупнейших словарей русского языка и содержит более 200000 слов. <br> 
-		Некоторые слова Даль придумал сам (например, "ловкосилие" в качестве замены для "гимнастики").</p>
+        <h2 class="display-5 fw-bold">Название:</h2>
+        <p class="lead"> {{name}}</p>
+		
+		<h2 class="display-5 fw-bold">Авторы и редакторы:</h2>
+        <p class="lead"> {{author}}</p>
+		
+		<h2 class="display-5 fw-bold">Ссылка на онлайн-ресурс:</h2>
+        <p class="lead"> {{online}}</p>
+		
+		
       </div>
 	  
 	  
-	  <div class="col-5">
-        <img src="Dal.jpg" class="d-block mx-lg-auto img-fluid" alt="dic-pic" width="600" height="600" loading="lazy">
-      </div>
 </div>
 </div>
 
