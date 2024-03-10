@@ -3,9 +3,9 @@
   box-sizing: border-box;
 }
 
-body {
+.body-wheel {
   display: grid;
-  place-items: center;
+  /*place-items: center;*/
   overflow: hidden;
 }
 
@@ -26,6 +26,8 @@ body {
     "spinner"
     "trigger";
   font-size: calc(var(--size) / 21);
+  margin-top: 20px;
+  margin-left: 50px;
 }
 
 .deal-wheel > * {
@@ -66,7 +68,7 @@ body {
 .dict span
 {
 	position: relative;
-	font-size: 15.0pt;
+	font-size: 12.0pt;
 }
 
 .ticker {
@@ -82,14 +84,14 @@ body {
 
 .btn-spin {
   margin-top: -15px;
-  position: relative;
+  /*position: relative;*/
   color: white;
   background: black;
   border: none;
   font-size: inherit;
   font-family: "Arsenal";
 
-  padding: 0.9rem 2rem 1rem;
+  /*padding: 0.9rem 2rem 1rem;*/
   border-radius: 0.5rem;
   cursor: pointer;
 }
@@ -145,4 +147,4 @@ h1 {
   margin-top: -10px;
   margin-bottom: -10px;
   font-size: 60px;
-font-family: "Arsenal";}
+font-family: "Arsenal";}*/

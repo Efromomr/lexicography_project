@@ -1,7 +1,7 @@
 // массив со всеми словарями
-let all_dicts = ["Словарь русских народных говоров", "Обратный словарь русского языка", "Новый словарь русских названий жителей",
-"Эсперанто-русский словарь", "Словарь фантастики", "Русский мат. Толковый словарь", 
-"Словарь областного архангельского наречия", "Словарь языка интернета. ru", "Словарь Макса Фасмера"];
+let all_dicts = ["Архангельский областной словарь", "Краткий словарь русского жестового языка", "Словарь языка русских жестов",
+"Русско-жестовый словарь", "Жестово-русский словарь", "Русский мат. Толковый словарь",
+"Обратный словарь русского языка", "Словарь языка интернета. ru", "Словарь трудностей русского языка"];
 const shuffled = [...all_dicts].sort(() => 0.5 - Math.random());
 let dict_arr = shuffled.slice(0, 9);
 const dicts = [
@@ -9,11 +9,11 @@ const dicts = [
     text: dict_arr[1],
     color: "hsl(197 30% 43%)",
   },
-  { 
+  {
     text: dict_arr[2],
     color: "hsl(173 58% 39%)",
   },
-  { 
+  {
     text: dict_arr[3],
     color: "hsl(43 74% 66%)",
   },
@@ -100,11 +100,11 @@ const spinertia = (min, max) => {
 const runTickerAnimation = () => {
   const values = spinnerStyles.transform.split("(")[1].split(")")[0].split(",");
   const a = values[0];
-  const b = values[1];  
+  const b = values[1];
   let rad = Math.atan2(b, a);
-  
+
   if (rad < 0) rad += (2 * Math.PI);
-  
+
   const angle = Math.round(rad * (180 / Math.PI));
   const slice = Math.floor(angle / dictSlice);
 
@@ -132,9 +132,10 @@ trigger.addEventListener("click", () => {
 });
 
 function loadPage() {
-$.post( "/postmethod", {
-    javascript_data: 'sample_text'
-});
+    const element = document.getElementById('dict_link');
+    element.innerHTML = document.getElementsByClassName("dict selected")[0].firstElementChild.innerHTML;
+    element.href = "/dict_page?type=" + document.getElementsByClassName("dict selected")[0].firstElementChild.innerHTML.split(' ').join('+');
+
 }
 spinner.addEventListener("transitionend", () => {
   cancelAnimationFrame(tickerAnim);
@@ -142,8 +143,8 @@ spinner.addEventListener("transitionend", () => {
   selectDict();
   wheel.classList.remove(spinClass);
   spinner.style.setProperty("--rotate", rotation);
-  //trigger.disabled = false;
-  setTimeout(loadPage, 2000);
+  trigger.disabled = false;
+  loadPage();
 });
 
 // подготавливаем всё к первому запуску

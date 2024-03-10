@@ -10,10 +10,13 @@ a {
     text-decoration: none !important; }
 
 h1 {
-  font-size: 60px;
-font-family: "Arsenal";}
+  font-size: 40px;
+  font-family: "Arsenal";
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
 h2 {
-  font-size: 20px; 
+  font-size: 10px;
 font-family: "Arsenal";}
 p {
   font-family: "Arsenal";}
