@@ -1,5 +1,5 @@
 body {
-  font-family: "Arsenal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   background-color: #fff; }
 
 a {
@@ -11,26 +11,55 @@ a {
 
 h1 {
   font-size: 40px;
-  font-family: "Arsenal";
+  font-family: "Oswald";
   margin-top: -10px;
   margin-bottom: -10px;
 }
 h2 {
-  font-size: 10px;
-font-family: "Arsenal";}
+  font-size: 30px;
+  font-family: "Oswald";
+  text-align: center;
+}
 p {
-  font-family: "Arsenal";}
+  font-size: 30px;
+  font-family: "Oswald";}
+
+a {
+  font-size: 30px;
+  font-family: "Oswald";}
 
 number-label {
-  font-family: "Arsenal";
+  font-family: "Oswald";
   font-size: 75px;
   margin: 0px;}
 label {
-  font-family: "Arsenal";
+  font-family: "Oswald";
   font-size: 50px;}
 br {
    display: block;
    margin: 5px 0;
 }
+figcaption {
+    font-size: 20px;
+}
+
+a.dict_list {
+  font-size: 30px;
+  font-family: Roboto;}
+
+.quiz-title {
+margin-top: 160px;
+}
+/*img {
+    z-index: 2;
+    transform: rotate(10deg);
+}
+img.pic2 {
+    z-index: 1;
+}
+img.pic3 {
+    z-index: 2;
+    transform: rotate(-5deg);
+}*/
 
 

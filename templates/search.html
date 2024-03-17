@@ -4,22 +4,41 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="/static/css/dict_style.css">
 <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/dict_style.css">
 
-  <link href="https://fonts.googleapis.com/css?family=Arsenal:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-  <a class="navbar-brand px4" href="#">База словарей</a>
+   <nav class="navbar navbar-expand navbar-light" style="background-color: hsl(49 100% 58%);"">
 
   <div class="collapse navbar-collapse" id="navbarsExample02">
+  <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"> Словарный запас</a>
+      </li>
+    </ul>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="/">Колесо </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/tag_yrslf">Tag yourself </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/ppl_test">Какой вы лексикограф? </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/dict_test">Что из этого настоящий словарь? </a>
       </li>
     </ul>
     <form class="form-inline my-2 my-md-0">
@@ -31,12 +50,12 @@
     <p>{{res}}</p>
    {% for example in data %}
 
-                {% if example == 'Ничего не нашлось :(' %}
-                     <p class="example">{{example}}</p>
+                {% if example[0] == 'Ничего не нашлось :(' %}
+                     <p>{{example[0]}}</p>
 
                 {% else %}
                         <div class="example-container">
-                            <li><a href="{{url_for('dict_page', type = example)}}"> {{example}}</a></li>
+                            <li><a class = "dict_list" href="{{url_for('dict_page', type = example[2])}}"> {{example[2]}} <i> {{example[4]}} </i></a></li>
                         </div>
                 {% endif %}
             {% endfor %}

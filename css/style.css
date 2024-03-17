@@ -69,6 +69,10 @@
 {
 	position: relative;
 	font-size: 12.0pt;
+	width: 400px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+    overflow: hidden;"
 }
 
 .ticker {
@@ -143,8 +147,28 @@
 }
 
 
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease; }
+  a, a:hover {
+    text-decoration: none !important; }
+
 h1 {
+  font-size: 40px;
+  font-family: "Oswald";
   margin-top: -10px;
   margin-bottom: -10px;
-  font-size: 60px;
-font-family: "Arsenal";}*/
+}
+h2 {
+  font-size: 30px;
+  font-family: "Oswald";
+  text-align: center;
+}
+p {
+  font-size: 30px;
+  font-family: "Oswald";}
+
+a {
+  font-size: 30px;
+  font-family: "Oswald";}

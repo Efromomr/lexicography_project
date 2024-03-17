@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500&display=swap" rel="stylesheet">
+
+
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="/static/css/bootstrap.min.css"> -->
+
+    <!-- Style -->
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+      <link rel="stylesheet" href="/static/css/dict_style.css">
+
+    <title>База словарей</title>
+  </head>
+
+<body>
+
+<nav class="navbar navbar-expand navbar-light" style="background-color: hsl(49 100% 58%);"">
+
+  <div class="collapse navbar-collapse" id="navbarsExample02">
+  <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"> Словарный запас</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Колесо </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/tag_yrslf">Tag yourself </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/ppl_test">Какой вы лексикограф? </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/dict_test">Что из этого настоящий словарь? </a>
+      </li>
+    </ul>
+    <form action="/res" method="get" class="form-inline my-2 my-md-0">
+      <input class="form-control" type="text" name = "q" placeholder="Поиск">
+    </form>
+  </div>
+</nav>
+<h2 text-align = "center" class="align-middle" >Tag yourself </h2>
+<h2 text-align = "center" class="align-middle" > от англ. tag yourself  ‘отметь себя’ </h2>
+<div class="container mt-5">
+    <div class="row text-center">
+	  <div class="col-4">
+	     <a data-bs-toggle="modal" data-bs-target="#tolkModal">
+	      <figure>
+                <img src="/static/images/quest_mark.png" width="100" height="100" alt="...">
+                <figcaption> - самый популярный в тусовке <br> - Вы всегда готовы помочь, если кто-то что-то не понял <br> - если бы были врачом, работали бы в ожеговом (sic!) центре <br>
+                - знаете слово сибарит, но не знаете, зачем <br> </figcaption>
+          </figure>
+        </a>
+      </div>
+
+	  <div class="col-4">
+	     <a data-bs-toggle="modal" data-bs-target="#dialModal">
+	      <figure>
+                <img src="/static/images/quest_mark.png" width="100" height="100" alt="...">
+                <figcaption> - родились в деревне или в небольшом городке, недолюбливаете столичных; <br> - обижаетесь, когда Вам указывают на особенности Вашего произношения; <br>
+                - больше всего на свете любите родной край и его природу; <br> - общительны, но проще всего Вам с пожилыми; <br> - цените разнообразие. </figcaption>
+          </figure>
+        </a>
+      </div>
+
+      <div class="col-4">
+	     <a data-bs-toggle="modal" data-bs-target="#scModal">
+	      <figure>
+                <img src="/static/images/quest_mark.png" width="100" height="100" alt="...">
+                <figcaption> - считаете, что это Вы лучше всех подсказываете; <br> - любите детей;  <br> - не понимаете, зачем люди вечно всё усложняют; <br>- гении адаптации; <br> - Вам нравится учиться.</figcaption>
+          </figure>
+        </a>
+      </div>
+    </div>
+
+    <div class="row text-center">
+	  <div class="col-4">
+	     <a data-bs-toggle="modal" data-bs-target="#gestModal">
+	      <figure>
+                <img src="/static/images/quest_mark.png" width="100" height="100" alt="...">
+                <figcaption> - эмоциональный; <br> - главный весельчак; <br> - любите играть в крокодил; <br> - без жестикуляции как без рук; <br> - лучше всех подсказываете на уроках.  </figcaption>
+          </figure>
+        </a>
+      </div>
+
+	  <div class="col-4">
+	     <a data-bs-toggle="modal" data-bs-target="#histModal">
+	      <figure>
+                <img src="/static/images/quest_mark.png" width="100" height="100" alt="...">
+                <figcaption> - "а вот раньше-то..."; <br> - цените и уважаете память предков, семья и Родина — превыше всего; <br> - можете рассказать, как связаны бык и пчела; <br>
+- любите соблюдать традиции, предпочитаете консервативные методы новым и непонятным; <br> - не очень хорошо управляетесь с компьютером, зато знаете парочку древних проклятий.</figcaption>
+          </figure>
+        </a>
+      </div>
+
+      <div class="col-4">
+	     <a data-bs-toggle="modal" data-bs-target="#poetModal">
+	      <figure>
+                <img src="/static/images/quest_mark.png" width="100" height="100" alt="...">
+                <figcaption> - нежная, как цветок, и тонко чувствующая натура; <br> - в секунду отличите ямб от хорея, а также от дактиля, амфибрахия и анапеста; <br> - Вы порхаете как бабочка и жалите, как пчела; Ваш язык острее бритвы, а слова жгут огнём; <br>
+- с лёгкостью бы приняли участие в рэп-баттле, потому что умеете придумывать рифмы на ходу; <br> - Ваш кумир - Пушкин или Маяковский.</figcaption>
+          </figure>
+        </a>
+      </div>
+    </div>
+
+    <div class="row text-center">
+	  <div class="col-4">
+	     <a data-bs-toggle="modal" data-bs-target="#transModal">
+	      <figure>
+                <img src="/static/images/quest_mark.png" width="100" height="100" alt="...">
+                <figcaption> - любите анекдоты про Штирлица; <br> - не доверяете собакам, потому что слышите от них только lie; <br>
+- иногда не можете подобрать русские слова ("Шишков, прости...");  <br>  - интерфейс телефона опять на каком-то новом языке; <br> - сова Дуолинго боится Вас, а не Вы её. </figcaption>
+          </figure>
+        </a>
+      </div>
+
+	  <div class="col-4">
+	     <a data-bs-toggle="modal" data-bs-target="#orfoModal">
+	      <figure>
+                <img src="/static/images/quest_mark.png" width="100" height="100" alt="...">
+                <figcaption> - строже учительницы в школе; <br> - даже на другом конце комнаты на шумной вечеринке услышите слово "звОнит"; <br> - всегда готовы вежливо подсказать кому-то, что он не прав; <br>
+- Ваше мнение часто шокирует людей; <br> - уверены, что ошибаются только неграмотные. </figcaption>
+          </figure>
+        </a>
+      </div>
+
+      <div class="col-4">
+	     <a data-bs-toggle="modal" data-bs-target="#slangModal">
+	      <figure>
+                <img src="/static/images/quest_mark.png" width="100" height="100" alt="...">
+                <figcaption> - Вы активный пользователь соцсетей и знакомы со всеми модными трендами; <br> - закатываете глаза, когда старшие Вас не понимают;<br> - когда надо, можете остроумно пошутить, а когда надо, и ввернуть крепкое словцо;
+<br> - "если краш оказался трэш, с ним не чилл и не вайб, а хайп"; <br> - Ваш лексикон даже побогаче, чем у некоторых, но не все это ценят... </figcaption>
+          </figure>
+        </a>
+      </div>
+    </div>
+</div>
+
+
+<div class="modal fade modal-xl" id="tolkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content mx-auto">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel" text-align = 'center'>Поздравляем, вы <b>толковый</b>!</h1>
+      </div>
+      <div class="modal-body">
+        <p class="align-middle"> Именно о вас думают, когда говорят о словарях. Вы берёте на себя непростую задачу: объяснить простыми словами не только сложные вещи, но и сами простые слова. Может быть, Вы не знаете сложных терминов или молодёжных слов, зато ваша помощь может пригодиться даже в повседневных ситуациях.
+        <br> Вот ваши коллеги:</p>
+        <div class="container col-9">
+        <div class="row">
+          <div class="col-3">
+                      <img class = "pic1" src="/static/images/tolk_1.jpg" alt="..." style="transform: rotate(-5deg);"> </img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic2" src="/static/images/tolk_2.png" alt="...">　</img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic3" src="/static/images/tolk_3.png" alt="..." style="transform: rotate(5deg);"> </img>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade modal-xl" id="dialModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content mx-auto">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel" text-align = 'center'>Поздравляем, вы <b>диалектный</b>!</h1>
+      </div>
+      <div class="modal-body">
+          <p>Вы любите, как говорят у Вас на родине, и не считаете это неправильным. "Гэканье" и "оканье" ласкают Ваш слух. Вы всегда открыты к разговору с любым человеком, откуда бы он ни был родом; и Вы так быстро освоите новый диалект, что станете своим в любой компании.
+          <br>Вот ваши коллеги:</p>
+        <div class="container col-9">
+        <div class="row">
+          <div class="col-3">
+                      <img class = "pic1" src="/static/images/dial_1.png" alt="..." style="transform: rotate(-5deg);"> </img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic2" src="/static/images/dial_2.png" alt="...">　</img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic3" src="/static/images/dial_3.png" alt="..." style="transform: rotate(5deg);"> </img>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade modal-xl" id="scModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content mx-auto">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel" text-align = 'center'>Поздравляем, вы <b>школьный</b>!</h1>
+      </div>
+      <div class="modal-body">
+          <p> Вы помогаете осваивать язык даже самым маленьким его носителям. С Вами им не страшны никакие трудности, а на любые вопросы обязательно найдутся ответы. Вы настоящая поддержка и опора в школьные будни.
+          <br> Вот ваши коллеги:</p>
+        <div class="container col-9">
+        <div class="row">
+          <div class="col-3">
+                      <img class = "pic1" width = 350 height = 500 src="/static/images/sc_1.png" alt="..." style="transform: rotate(-5deg);"> </img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic2" width = 350 height = 500 src="/static/images/sc_2.png" alt="...">　</img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic3" width = 350 height = 500 src="/static/images/sc_3.png" alt="..." style="transform: rotate(5deg);"> </img>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade modal-xl" id="gestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content mx-auto">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel" text-align = 'center'>Поздравляем, вы <b>жестовый</b>!</h1>
+      </div>
+      <div class="modal-body">
+         <p> Или всё же словарь жестового языка (не путайте!)? Как бы там ни было, Вам не нужны звуки, чтобы выразить все свои мысли. Вам не может помешать шум машин или требование соблюдать тишину на экзамене. Вы сама выразительность, и, когда вам надо, у Вас правда всё на лице написано.
+         <br> Вот ваши коллеги:</p>
+        <div class="container col-9">
+        <div class="row">
+          <div class="col-3">
+                      <img class = "pic1" width = 350 height = 500 src="/static/images/gest_1.png" alt="..." style="transform: rotate(-5deg);"> </img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic2" width = 350 height = 500 src="/static/images/gest_2.png" alt="...">　</img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic3" width = 350 height = 500 src="/static/images/gest_3.png" alt="..." style="transform: rotate(5deg);"> </img>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade modal-xl" id="histModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content mx-auto">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel" text-align = 'center'>Поздравляем, вы <b>исторический</b>!</h1>
+      </div>
+      <div class="modal-body">
+          <p> Вы кроете в себе таинства древних языков и помогаете современникам обрести связь со своими прадедами. Слова для Вас — не просто способ выразить свои мысли, но и кладезь эпох, разительно изменившаяся за века. Вашей мудрости можно только позавидовать.
+          <br> Вот ваши коллеги:</p>
+        <div class="container col-9">
+        <div class="row">
+          <div class="col-3">
+                      <img class = "pic1" width = 350 height = 500 src="/static/images/hist_1.png" alt="..." style="transform: rotate(-5deg);"> </img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic2" width = 350 height = 500 src="/static/images/hist_2.png" alt="...">　</img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic3" width = 350 height = 500 src="/static/images/hist_3.png" alt="..." style="transform: rotate(5deg);"> </img>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade modal-xl" id="poetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content mx-auto">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel" text-align = 'center'>Поздравляем, вы <b>поэтический</b>! </h1>
+      </div>
+      <div class="modal-body">
+        <p> Поздравляем, Вы — поэтический словарь! Помогаете начинающим авторам слагать свои первые стихи для первой любви, да так, что красота Ваших слов пленит любого. Сердитесь, когда кто-то ругает Ваших любимых поэтов. Вы робки и чувствительны, но можете так метко задеть одной фразой, что доведёте до слёз — слёз счастья или обиды.
+        <br> Вот ваши коллеги:</p>
+        <div class="container col-9">
+        <div class="row">
+          <div class="col-3">
+                      <img class = "pic1" width = 350 height = 500 src="/static/images/poet_1.png" alt="..." style="transform: rotate(-5deg);"> </img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic2" width = 350 height = 500 src="/static/images/poet_2.png" alt="...">　</img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic3" width = 350 height = 500 src="/static/images/poet_3.png" alt="..." style="transform: rotate(5deg);"> </img>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade modal-xl" id="transModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content mx-auto">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel" text-align = 'center'>Поздравляем, вы <b>двуязычный</b>!</h1>
+      </div>
+      <div class="modal-body">
+        <p> Именно Вы пытаетесь построить мостик между двумя мирами разных языков. Без Вас не обходится ни один начинающий, а читают с Вами даже чаще, чем с людьми. Вы всегда готовы помочь проникнуть в тонкости другой культуры и заметить даже самые трудноуловимые различия.
+        <br> Вот ваши коллеги:</p>
+        <div class="container col-9">
+        <div class="row">
+          <div class="col-3">
+                      <img class = "pic1" width = 350 height = 500 src="/static/images/trans_1.png" alt="..." style="transform: rotate(-5deg);"> </img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic2" width = 350 height = 500 src="/static/images/trans_2.png" alt="...">　</img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic3" width = 350 height = 500 src="/static/images/trans_3.png" alt="..." style="transform: rotate(5deg);"> </img>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade modal-xl" id="orfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content mx-auto">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel" text-align = 'center'>Поздравляем, вы <b>орфоэпический</b>!</h1>
+      </div>
+      <div class="modal-body">
+          <p> Вы — настоящий сборник удивительных фактов: подскажете, как правильно ставить ударение, даже если так больше никто не говорит. К Вам обращаются за помощью именитые актёры, дикторы и политики, чтобы точно сверкать на сцене красноречием. Но иногда проявляйте немного гибкости и снисхождения — язык порой меняется, и Вам не обязательно стоять на своём до последнего.
+          <br> Вот ваши коллеги:</p>
+        <div class="container col-9">
+        <div class="row">
+          <div class="col-3">
+                      <img class = "pic1" width = 350 height = 500 src="/static/images/orfo_1.png" alt="..." style="transform: rotate(-5deg);"> </img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic2" width = 350 height = 500 src="/static/images/orfo_2.png" alt="...">　</img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic3" width = 350 height = 500 src="/static/images/orfo_3.png" alt="..." style="transform: rotate(5deg);"> </img>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade modal-xl" id="slangModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content mx-auto">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel" text-align = 'center'>Поздравляем, вы <b>словарь сленга</b>!</h1>
+      </div>
+      <div class="modal-body">
+          <p>Лучший друг молодёжи, Вы всегда знаете, что в мире популярно. Но боже упаси Вас разозлить! Так обложите, что даже у самого отъявленного сапожника уши завянут.
+          <br> Вот ваши коллеги:</p>
+        <div class="container col-9">
+        <div class="row">
+          <div class="col-3">
+                      <img class = "pic1" width = 350 height = 500 src="/static/images/slang_1.png" alt="..." style="transform: rotate(-5deg);"> </img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic2" width = 350 height = 500 src="/static/images/slang_2.png" alt="...">　</img>
+          </div>
+          <div class="col-3">
+                      <img class = "pic3" width = 350 height = 500 src="/static/images/slang_3.png" alt="..." style="transform: rotate(5deg);"> </img>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+

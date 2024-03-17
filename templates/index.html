@@ -6,18 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
           <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Arsenal:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500&display=swap" rel="stylesheet">
 
 </head>
 
 
-<nav class="navbar navbar-expand navbar-dark bg-dark">
-  <a class="navbar-brand px4" href="#">База словарей</a>
+<nav class="navbar navbar-expand navbar-light" style="background-color: hsl(49 100% 58%);"">
 
   <div class="collapse navbar-collapse" id="navbarsExample02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
+        <a class="nav-link"> Словарный запас</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
         <a class="nav-link" href="/">Колесо </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/tag_yrslf">Tag yourself </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/ppl_test">Какой вы лексикограф? </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/dict_test">Что из этого настоящий словарь? </a>
       </li>
     </ul>
     <form action="/res" method="get"class="form-inline my-2 my-md-0">
@@ -26,6 +45,7 @@
   </div>
 </nav>
 
+    <h1 class="text-center"> Словарное колесо Фортуны </h1>
 
 <body>
     <div class="container">
@@ -43,7 +63,8 @@
 
 <div class="col align-self-center">
     <h1>
-        <a href="/dict_page?type=Русский+мат.+Толковый+словарь" id = 'dict_link'>  </a>
+        <a href="/dict_page?type=Русский+мат.+Толковый+словарь" class = 'badge bg-warning text-dark' id = 'dict_link' style="width: 500px; text-overflow: ellipsis; white-space: nowrap;
+overflow: hidden;"> </a>
     </h1>
 </div>
 </div>
